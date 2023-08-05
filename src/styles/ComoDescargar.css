@@ -1,0 +1,107 @@
+@import url("./common/fonts.css");
+@import url("./common/colors.css");
+
+/* Media Queries */
+
+@media (min-width: 0px) and (max-width: 767px) {
+  #body-como-descargar {
+    padding: 15px !important;
+  }
+
+  #section-que-es-terabox {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+
+    padding-top: 15px !important;
+  }
+
+  .como-descargar-separador-section {
+    height: 25px !important;
+  }
+
+  .como-descargar-separador-carousel {
+    height: 15px !important;
+  }
+
+  #section-como-descargar {
+    padding-top: 30px !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    padding-bottom: 15px !important;
+  }
+
+  #list-caracteristicas-terabox {
+    padding-left: 20px;
+  }
+}
+
+#body-como-descargar {
+  background-color: var(--body-como-descargar-background);
+  height: 100%;
+
+  padding: 30px;
+}
+
+#section-que-es-terabox {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+#section-como-descargar {
+  background-color: lightgray;
+  padding: 30px;
+  border-radius: 5px;
+  border: solid 1px black;
+}
+
+.como-descargar-titulo {
+  font-family: common-bold, common-bold;
+  font-size: 18px;
+  color: var(--como-descargar-titulo-color);
+  text-align: center;
+}
+
+.como-descargar-subtitulo {
+  font-family: common-bold, common-bold;
+  font-size: 16px;
+  color: var(--como-descargar-subtitulo-color);
+}
+
+.como-descargar-texto {
+  font-family: common-regular, common-regular;
+  font-size: 14px;
+  color: var(--como-descargar-texto-color);
+  text-align: justify;
+}
+
+.como-descargar-separador-section {
+  height: 30px;
+}
+
+.como-descargar-separador-titulo {
+  height: 30px;
+}
+
+.como-descargar-separador-texto {
+  height: 15px;
+}
+
+.como-descargar-separador-carousel {
+  height: 25px;
+}
+
+.como-descargar-observacion {
+  font-family: common-regular, common-regular;
+  font-size: 14px;
+  color: var(--como-descargar-observacion-color);
+  text-align: justify;
+
+  border: solid 1px var(--como-descargar-observacion-border-color);
+  background: var(--como-descargar-observacion-background);
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.ulr-como-descargar {
+  text-decoration: none;
+}

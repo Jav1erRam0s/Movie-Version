@@ -1,0 +1,63 @@
+@import url("./common/fonts.css");
+@import url("./common/colors.css");
+
+#filtro-documentales {
+  background: var(--filtro-documentales-background);
+
+  border-radius: 10px;
+  border-style: solid;
+  border-color: var(--filtro-documentales-border-color);
+  border-width: 1px;
+
+  padding: 0;
+
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 24px;
+}
+
+.container-documental-section-filter-item{
+  display: flex;
+  flex-direction: row;
+}
+
+.container-documentales-filtro-imgs {
+  margin-right: 8px;
+  height: 31px;
+  aspect-ratio: 1 / 1;
+  background-color: var(--container-documentales-filtro-imgs-background);
+
+  border-radius: 5px;
+  border: solid 1px var(--container-documentales-filtro-imgs-border-color);
+
+  /*Align center horizonal y vertical */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-documentales-filtro-imgs:hover{
+  background-color: var(--container-documentales-filtro-imgs-background-hover);;
+}
+
+.container-documentales-filtro-imgs img {
+  display: block;
+  height: 23px;
+  width: 23px;
+  margin: auto;
+}
+
+.element-form-documentales-filter {
+  text-align: center;
+  font-family: common-regular, common-regular;
+  color: var(--element-form-documentales-filter-color) !important;
+  border: solid 1px var(--element-form-documentales-border-color) !important;
+  font-size: 14px;
+}
+
+select option {
+  text-align: center;
+  font-family: common-regular, common-regular;
+  color: var(--select-option-documentales-color);
+  font-size: 14px;
+}

@@ -1,0 +1,39 @@
+@import url("./common/fonts.css");
+@import url("./common/colors.css");
+
+/* Media Queries */
+
+@media (min-width: 0px) and (max-width: 1024px) {
+}
+
+@media (min-width: 1023px) and (max-width: 1200px) {
+}
+
+.card-miniserie {
+  border: solid var(--card-miniserie-border-background) 1px;
+  box-shadow: 0px 0px 4px var(--card-miniserie-boxshadow);
+  border-radius: 10px !important;
+  aspect-ratio: 1 / 1;
+}
+
+.card-miniserie:hover {
+  box-shadow: 0px 0px 10px var(--card-miniserie-boxshadow-hover);
+}
+
+.card-miniserie-foto {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.card-miniserie-foto img {
+  height: 100%;
+  width: 100%;
+}
+
+.card-miniserie:hover .card-miniserie-foto img {
+  transition: transform 0.5s;
+  width: 100%;
+  transform: scale(1.1);
+}

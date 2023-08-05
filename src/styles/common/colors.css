@@ -1,0 +1,199 @@
+:root {
+  /* App */
+  --scroll-bar-color: #fece68;
+  --scroll-background: #212529;
+
+  /* Presentacion */
+
+  --presentacion-title-color: white;
+  --presentacion-txt-color: whitesmoke;
+
+  /* SideBar */
+
+  --sidebar-title-color: white;
+
+  --link-sidebar-color: whitesmoke;
+  --link-sidebar-color-hover: #fece68;
+
+  /* Recomendacion SideBar */
+
+  --container-recomendacion-background: #101214;
+  --container-recomendacion-border: #fece6880;
+
+  --recomendacion-title-color: #fece68;
+  --recomendacion-title-mounth-color: whitesmoke;
+
+  --recomendacion-badge-type-pelicula-border-color: whitesmoke;
+  --recomendacion-badge-type-pelicula-background: #212529;
+  --recomendacion-badge-type-pelicula-color: whitesmoke;
+
+  --recomendacion-badge-type-documental-border-color: #101214;
+  --recomendacion-badge-type-documental-background: #ffa500c0;
+  --recomendacion-badge-type-documental-color: #101214;
+
+  --recomendacion-badge-type-miniserie-border-color: #101214;
+  --recomendacion-badge-type-miniserie-background: #cb3631;
+  --recomendacion-badge-type-miniserie-color: whitesmoke;
+
+  /* Modal Recomendacion */
+
+  --modal-header-recomendacion-background: #101214;
+  --modal-recomendacion-title-color: whitesmoke;
+  --modal-recomendacion-btn-close-background: whitesmoke;
+
+  /* NavBar */
+
+  --navbar-title-color: white;
+
+  --navbar-toggler-border-color: #fece6880;
+
+  --link-navbar-color: whitesmoke;
+  --link-navbar-color-hover: #fece68;
+
+  /* Recomendacion NavBar */
+
+  --recomendacion-navbar-info-color: #00a2e8;
+  --recomendacion-button-trailer-background: #00a2e8;
+  --recomendacion-button-trailer-color: #101214;
+
+  /* --------------- Peliculas --------------- */
+
+  /* Peliculas */
+  --body-peliculas-background: whitesmoke;
+
+  /* FiltroPeliculas */
+  --filtro-peliculas-background: #212529;
+  --filtro-peliculas-border-color: #101214;
+  --container-peliculas-filtro-imgs-background: #00a2e8c0;
+  --container-peliculas-filtro-imgs-border-color: #101214;
+  --container-peliculas-filtro-imgs-background-hover: #00a2e8a0;
+  --element-form-peliculas-filter-color: #101214;
+  --element-form-peliculas-border-color: #101214;
+  --select-option-peliculas-color: #101214;
+
+  /* ListasPeliculas */
+  --notificacion-peliculas-color: #212529;
+
+  /* PaginacionPeliculas */
+  --button-control-peliculas-color: #00a2e8;
+  --button-page-peliculas-color: whitesmoke;
+  --page-link-peliculas-background: #212529;
+  --page-link-peliculas-background-hover: #212529e0;
+  --page-link-peliculas-border-color: #101214;
+
+  /* CardPelicula */
+  --card-pelicula-border-background: #101214;
+  --card-pelicula-boxshadow: rgba(14, 44, 62, 0.4);
+  --card-pelicula-boxshadow-hover: rgba(14, 44, 62, 0.7);
+
+  /* ModalPelicula */
+  --modal-header-pelicula-background: #101214;
+  --modal-header-pelicula-info-color: whitesmoke;
+  --modal-header-pelicula-btn-close-background: whitesmoke;
+
+  --modal-body-pelicula-info-color: #101214;
+  --modal-body-pelicula-photo-border-background: #101214a0;
+  --modal-body-pelicula-trailer-border-background: #101214a0;
+
+  --modal-footer-pelicula-background: #101214;
+  --modal-footer-pelicula-info-color: whitesmoke;
+
+  /* --------------- Documentales --------------- */
+
+  /* Documentales */
+  --body-documentales-background: whitesmoke;
+
+  /* FiltroDocumentales */
+  --filtro-documentales-background: #212529;
+  --filtro-documentales-border-color: #101214;
+  --container-documentales-filtro-imgs-background: #00a2e8c0;
+  --container-documentales-filtro-imgs-border-color: #101214;
+  --container-documentales-filtro-imgs-background-hover: #00a2e8a0;
+  --element-form-documentales-filter-color: #101214;
+  --element-form-documentales-border-color: #101214;
+  --select-option-documentales-color: #101214;
+
+  /* ListasDocumentales */
+  --notificacion-documentales-color: #212529;
+
+  /* PaginacionDocumentales */
+  --button-control-documentales-color: #00a2e8;
+  --button-page-documentales-color: whitesmoke;
+  --page-link-documentales-background: #212529;
+  --page-link-documentales-background-hover: #212529e0;
+  --page-link-documentales-border-color: #101214;
+
+  /* CardDocumentales */
+  --card-documental-border-background: #101214;
+  --card-documental-boxshadow: rgba(14, 44, 62, 0.4);
+  --card-documental-boxshadow-hover: rgba(14, 44, 62, 0.7);
+
+  /* ModalDocumentales */
+  --modal-header-documental-background: #101214;
+  --modal-header-documental-info-color: whitesmoke;
+  --modal-header-documental-btn-close-background: whitesmoke;
+
+  --modal-body-documental-info-color: #101214;
+  --modal-body-documental-photo-border-background: #101214a0;
+  --modal-body-documental-trailer-border-background: #101214a0;
+
+  --modal-footer-documental-background: #101214;
+  --modal-footer-documental-info-color: whitesmoke;
+
+  /* --------------- Miniseries --------------- */
+
+  /* Miniseries */
+  --body-miniseries-background: whitesmoke;
+
+  /* FiltroMiniseries */
+  --filtro-miniseries-background: #212529;
+  --filtro-miniseries-border-color: #101214;
+  --container-miniseries-filtro-imgs-background: #00a2e8c0;
+  --container-miniseries-filtro-imgs-border-color: #101214;
+  --container-miniseries-filtro-imgs-background-hover: #00a2e8a0;
+  --element-form-miniseries-filter-color: #101214;
+  --element-form-miniseries-border-color: #101214;
+  --select-option-miniseries-color: #101214;
+
+  /* ListasMiniseries */
+  --notificacion-miniseries-color: #212529;
+
+  /* PaginacionMiniseries */
+  --button-control-miniseries-color: #00a2e8;
+  --button-page-miniseries-color: whitesmoke;
+  --page-link-miniseries-background: #212529;
+  --page-link-miniseries-background-hover: #212529e0;
+  --page-link-miniseries-border-color: #101214;
+
+  /* CardMiniseries */
+  --card-miniserie-border-background: #101214;
+  --card-miniserie-boxshadow: rgba(14, 44, 62, 0.4);
+  --card-miniserie-boxshadow-hover: rgba(14, 44, 62, 0.7);
+
+  /* ModalMiniseries */
+  --modal-header-miniserie-background: #101214;
+  --modal-header-miniserie-info-color: whitesmoke;
+  --modal-header-miniserie-btn-close-background: whitesmoke;
+
+  --modal-body-miniserie-info-color: #101214;
+  --modal-body-miniserie-photo-border-background: #101214a0;
+  --modal-body-miniserie-trailer-border-background: #101214a0;
+
+  --modal-footer-miniserie-background: #101214;
+  --modal-footer-miniserie-info-color: whitesmoke;
+
+  /* --------------- ¿ Como Descargar ? --------------- */
+
+  /* ComoDescargar */
+  --body-como-descargar-background: whitesmoke;
+
+  --como-descargar-titulo-color: #006bf8;
+  --como-descargar-subtitulo-color: #101214;
+  --como-descargar-texto-color: #212529;
+  --como-descargar-observacion-color: #fece68;
+  --como-descargar-observacion-border-color: #101214;
+  --como-descargar-observacion-background: #212529;
+
+  /* CarouselComoDescargar */
+  --carousel-item-slide-img-border: #101214;
+}

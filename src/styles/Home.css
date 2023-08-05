@@ -1,0 +1,127 @@
+@import url("./common/fonts.css");
+@import url("./common/colors.css");
+
+/* Media Queries */
+
+@media (min-width: 0px) and (max-width: 767px) {
+  #contain-presentacion {
+    height: calc(100% - 55px) !important;
+  }
+
+  #presentacion-title {
+    font-size: 22px !important;
+  }
+  .presentacion-txt {
+    font-size: 13px !important;
+  }
+}
+
+#container-home {
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 0;
+
+  background-color: black;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#contain-presentacion {
+  position: absolute;
+
+  height: 100%;
+
+  background-image: url("../images/fondo.gif");
+  background-repeat: no-repeat, repeat;
+  background-size: cover;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  -webkit-animation: smooth 15s ease-in;
+  -moz-animation: smooth 15s ease-in;
+  -o-animation: smooth 15s ease-in;
+  -ms-animation: smooth 15s ease-in;
+  animation: smooth 15s ease-in;
+}
+/* Firefox */
+@-moz-document url-prefix() {
+  #contain-presentacion {
+    width: -moz-available;
+  }
+}
+/* Chrome */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  #contain-presentacion {
+    width: -webkit-fill-available;
+  }
+}
+
+@-webkit-keyframes smooth {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes smooth {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes smooth {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes smooth {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#presentacion-title {
+  font-family: common-bold, common-bold;
+  font-size: 28px;
+  color: var(--presentacion-title-color);
+
+  margin-bottom: 30px;
+
+  width: 75%;
+  align-self: center;
+  text-align: center;
+}
+
+.presentacion-txt {
+  font-family: common-bold, common-bold;
+  font-size: 15px;
+  color: var(--presentacion-txt-color);
+
+  padding-bottom: 15px;
+
+  width: 350px;
+  align-self: center;
+  text-align: center;
+}

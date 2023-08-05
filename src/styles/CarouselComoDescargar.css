@@ -1,0 +1,42 @@
+@import url("./common/fonts.css");
+@import url("./common/colors.css");
+
+/* Media Queries */
+
+@media (min-width: 0px) and (max-width: 767px) {
+  .carousel-item-slide {
+    height: 200px !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .carousel-item-slide {
+    height: 300px !important;
+  }
+}
+
+.carousel-item-slide {
+  height: 400px;
+  width: 100%;
+}
+
+.carousel-item-slide img {
+  /* Ajustar imagen al contenido (cambiar el tamaño de la imagen) */
+  max-width: 100%;
+  max-height: 100%;
+  
+  /* Alineacion horizontal y vertical de la img en el contenedor */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+
+  border-radius: 7px;
+  border: 1px solid var(--carousel-item-slide-img-border);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(1);
+}

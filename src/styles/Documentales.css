@@ -1,0 +1,9 @@
+@import url("./common/fonts.css");
+@import url("./common/colors.css");
+
+#body-documentales {
+  background-color: var(--body-documentales-background);
+  height: 100%;
+
+  padding: 20px;
+}

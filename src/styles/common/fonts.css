@@ -1,0 +1,25 @@
+/* Fuente de: https://fonts.google.com/ */
+
+/* General */
+
+@font-face {
+  font-family: common-regular;
+  src: url("../fonts/Roboto/Roboto-Regular.ttf");
+}
+
+@font-face {
+  font-family: common-bold;
+  src: url("../fonts/Roboto/Roboto-Bold.ttf");
+}
+
+/* SideBar & NavBar */
+
+@font-face {
+  font-family: name-app;
+  src: url("../fonts/Jost/Jost-Black.ttf");
+}
+
+@font-face {
+  font-family: font-link;
+  src: url("../fonts/Roboto/Roboto-Medium.ttf");
+}
