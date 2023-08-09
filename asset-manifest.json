@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Movie-Version/static/css/main.f4a7a100.css",
-    "main.js": "/Movie-Version/static/js/main.e2fb5fe6.js",
+    "main.js": "/Movie-Version/static/js/main.1526e90b.js",
     "static/media/James Horner - The Dream.mp3": "/Movie-Version/static/media/James Horner - The Dream.5a34da33b690e5503c0a.mp3",
     "static/media/presentacion.mp4": "/Movie-Version/static/media/presentacion.069dc0916133738bfd7b.mp4",
     "static/media/fondo.gif": "/Movie-Version/static/media/fondo.5c0eaef8103d0a51df82.gif",
@@ -11,7 +11,6 @@
     "static/media/registracion-de-cuenta-3.png": "/Movie-Version/static/media/registracion-de-cuenta-3.c8df3f826ea16d288ab9.png",
     "static/media/registracion-de-cuenta-1.png": "/Movie-Version/static/media/registracion-de-cuenta-1.75fe37811420109532d1.png",
     "static/media/descarga-e-instalacion-de-terabox-for-pc-1.png": "/Movie-Version/static/media/descarga-e-instalacion-de-terabox-for-pc-1.47637333b0d6eb8a7bcb.png",
-    "static/media/presentacion.mp3": "/Movie-Version/static/media/presentacion.40747f1d3df57210062a.mp3",
     "static/media/movie-version.png": "/Movie-Version/static/media/movie-version.cae9d839591916beec02.png",
     "static/media/registracion-de-cuenta-4.png": "/Movie-Version/static/media/registracion-de-cuenta-4.95b8d0073c4390e939c5.png",
     "static/media/Roboto-Medium.ttf": "/Movie-Version/static/media/Roboto-Medium.7c8d04cd831df3033c8a.ttf",
@@ -37,10 +36,10 @@
     "static/media/capitulos.png": "/Movie-Version/static/media/capitulos.42d3b220ab67ccf02a9f.png",
     "index.html": "/Movie-Version/index.html",
     "main.f4a7a100.css.map": "/Movie-Version/static/css/main.f4a7a100.css.map",
-    "main.e2fb5fe6.js.map": "/Movie-Version/static/js/main.e2fb5fe6.js.map"
+    "main.1526e90b.js.map": "/Movie-Version/static/js/main.1526e90b.js.map"
   },
   "entrypoints": [
     "static/css/main.f4a7a100.css",
-    "static/js/main.e2fb5fe6.js"
+    "static/js/main.1526e90b.js"
   ]
 }
