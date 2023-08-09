@@ -15,7 +15,7 @@ import "../src/styles/App.css";
 function App() {
   return (
     <React.Fragment>
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <BrowserRouter>
         <div className="row" style={{ margin: 0 }}>
           <Layout></Layout>
           <div id="ContentBody" className="col-lg-9 col-md-9 col-sm-12">

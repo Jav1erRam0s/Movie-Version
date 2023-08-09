@@ -14,6 +14,7 @@ class ListaPeliculas extends React.Component {
       peliculasPage: [],
       paginacion: [],
       genres: [],
+      decades: [],
       actualPage: 1,
       cantidadPeliculasPage: 12,
       statusPeliculas: false,
@@ -23,7 +24,8 @@ class ListaPeliculas extends React.Component {
   /* <!-- Peticiones HTTPS --> */
   cargarPeliculas() {
     axios.get(`${url.path}/peliculas.json`).then((res) => {
-      const response = res.data.reverse();
+      const response = res.data;
+      /*.reverse();*/
       /*.sort(function (a, b) {
         if (a.title > b.title) return 1;
         if (a.title < b.title) return -1;
@@ -62,10 +64,22 @@ class ListaPeliculas extends React.Component {
       );
       //Ordena alfabeticamente
       listGenres.sort();
-
       this.setState({ genres: listGenres });
+
+      var listDecades = [];
+      response.forEach((element) => {
+        listDecades.push(element.year - (element.year % 10));
+      });
+      //filtra valores unicos
+      listDecades = listDecades.filter(
+        (value, index, array) => array.indexOf(value) === index
+      );
+      //Ordena de menor a mayor
+      listDecades.sort();
+      this.setState({ decades: listDecades });
     });
   }
+
   componentDidMount() {
     this.cargarPeliculas();
   }
@@ -97,11 +111,16 @@ class ListaPeliculas extends React.Component {
   /* <!-- /Metodos Paginacion --> */
 
   /* <!-- /Metodo Filtro --> */
-  updateListPeliculas = (valuePelicula, valueGenero, valueDecada, valueDuracion) => {
+  updateListPeliculas = (
+    valuePelicula,
+    valueGenero,
+    valueDecada,
+    valueDuracion
+  ) => {
     //inicializamos las variables limites de 'duracion'
     let duracionDesde = 0;
     let duracionHasta = 0;
-    switch(valueDuracion){
+    switch (valueDuracion) {
       case "0-d-89":
         duracionDesde = 0;
         duracionHasta = 89;
@@ -114,7 +133,7 @@ class ListaPeliculas extends React.Component {
         duracionDesde = 151;
         duracionHasta = Number.POSITIVE_INFINITY;
         break;
-      case "0-d-inf":
+      case "all":
         duracionDesde = 0;
         duracionHasta = Number.POSITIVE_INFINITY;
         break;
@@ -125,39 +144,18 @@ class ListaPeliculas extends React.Component {
     //inicializamos las variables limites de 'decada'
     let anioDesde = 0;
     let anioHasta = 0;
-    switch(valueDecada){
-      case "1980-a-1989":
-        anioDesde = 1980;
-        anioHasta = 1989;
-        break;
-      case "1990-a-1999":
-        anioDesde = 1990;
-        anioHasta = 1999;
-        break;
-      case "2000-a-2009":
-        anioDesde = 2000;
-        anioHasta = 2009;
-        break;
-      case "2010-a-2019":
-        anioDesde = 2010;
-        anioHasta = 2019;
-        break;
-      case "2020-a-2029":
-        anioDesde = 2020;
-        anioHasta = 2029;
-        break;
-      case "1980-a-inf":
-        anioDesde = 1980;
-        anioHasta = Number.POSITIVE_INFINITY;
-        break;
-      default:
-        break;
+    if (valueDecada === "all") {
+      anioDesde = 0;
+      anioHasta = Number.POSITIVE_INFINITY;
+    } else {
+      anioDesde = parseInt(valueDecada);
+      anioHasta =  parseInt(valueDecada) + 9;
     }
 
     let newPeliculasFilter;
 
     // Previo al filtro evaluamos si filtramos por genero
-    if (valueGenero !== "all"){
+    if (valueGenero !== "all") {
       newPeliculasFilter = this.state.peliculas.filter(
         (pelicula) =>
           pelicula.title.toLowerCase().indexOf(valuePelicula.toLowerCase()) >
@@ -166,9 +164,9 @@ class ListaPeliculas extends React.Component {
           pelicula.year >= anioDesde &&
           pelicula.year <= anioHasta &&
           pelicula.duration >= duracionDesde &&
-          pelicula.duration <= duracionHasta)
-    }
-    else{
+          pelicula.duration <= duracionHasta
+      );
+    } else {
       newPeliculasFilter = this.state.peliculas.filter(
         (pelicula) =>
           pelicula.title.toLowerCase().indexOf(valuePelicula.toLowerCase()) >
@@ -176,7 +174,8 @@ class ListaPeliculas extends React.Component {
           pelicula.year >= anioDesde &&
           pelicula.year <= anioHasta &&
           pelicula.duration >= duracionDesde &&
-          pelicula.duration <= duracionHasta)
+          pelicula.duration <= duracionHasta
+      );
     }
 
     //inicializo la paginacion en la hoja 1
@@ -200,7 +199,7 @@ class ListaPeliculas extends React.Component {
       ),
       paginacion: listPaginacion,
     });
-  }
+  };
   /* <!-- /Metodo Filtro --> */
 
   render() {
@@ -211,22 +210,29 @@ class ListaPeliculas extends React.Component {
           <FiltroPeliculas
             updateListPeliculas={this.updateListPeliculas}
             genres={this.state.genres}
+            decades={this.state.decades}
           />
           {/* LISTA DE PELICULAS */}
           <div className="row m-0" style={{ height: "100%" }}>
             {this.state.statusPeliculas === true &&
               this.state.peliculas.length === 0 && (
-                <div className="col-12 align-content-column" style={{ height: "100%", padding: "0" }}>
+                <div
+                  className="col-12 align-content-column"
+                  style={{ height: "100%", padding: "0" }}
+                >
                   <div className="notificacion-peliculas">
-                    A la brevedad tendremos peliculas
+                    A la brevedad tendremos películas
                   </div>
                 </div>
               )}
             {this.state.statusPeliculas === true &&
               this.state.peliculasFilter.length === 0 && (
-                <div className="col-12 align-content-column" style={{ height: "100%", padding: "0" }}>
+                <div
+                  className="col-12 align-content-column"
+                  style={{ height: "100%", padding: "0" }}
+                >
                   <div className="notificacion-peliculas">
-                    No se encontraron resultados que coincidan con la busqueda
+                    No se encontraron resultados que coincidan con la búsqueda
                   </div>
                 </div>
               )}
@@ -248,9 +254,7 @@ class ListaPeliculas extends React.Component {
             this.state.paginacion.length >= 2 && (
               <section id="section-pagination-peliculas">
                 <nav aria-label="Page navigation example">
-                  <ul
-                    className="nav-pagination pagination pagination-sm justify-content-center mb-0"
-                  >
+                  <ul className="nav-pagination pagination pagination-sm justify-content-center mb-0">
                     <li className="page-item">
                       <a href="#up" className="anclaje">
                         <button
@@ -258,7 +262,10 @@ class ListaPeliculas extends React.Component {
                           onClick={() => this.previousPage()}
                           aria-label="Previous"
                         >
-                          <span aria-hidden="true" className="buttonControlPelicula">
+                          <span
+                            aria-hidden="true"
+                            className="buttonControlPelicula"
+                          >
                             <b>&laquo;</b>
                           </span>
                         </button>
@@ -274,7 +281,9 @@ class ListaPeliculas extends React.Component {
                                 className="page-link"
                                 onClick={() => this.goToPage(element)}
                               >
-                                <span className="buttonPagePelicula">{element}</span>
+                                <span className="buttonPagePelicula">
+                                  {element}
+                                </span>
                               </button>
                             </a>
                           </li>
@@ -288,7 +297,10 @@ class ListaPeliculas extends React.Component {
                           onClick={() => this.nextPage()}
                           aria-label="Next"
                         >
-                          <span aria-hidden="true" className="buttonControlPelicula">
+                          <span
+                            aria-hidden="true"
+                            className="buttonControlPelicula"
+                          >
                             <b>&raquo;</b>
                           </span>
                         </button>

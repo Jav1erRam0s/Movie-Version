@@ -13,6 +13,7 @@
 .notificacion-documentales {
   font-family: common-regular, common-regular;
   color: var(--notificacion-documentales-color);
+  text-align: center;
   font-size: 15px;
   margin-bottom: 25px;
   margin-top: 20px;
@@ -40,12 +41,12 @@
   font-size: 14px;
 }
 
-.page-link{
+.page-link {
   height: 31px;
   background: var(--page-link-documentales-background) !important;
   border-color: var(--page-link-documentales-border-color) !important;
 }
 
-.page-link:hover{
+.page-link:hover {
   background: var(--page-link-documentales-background-hover) !important;
 }

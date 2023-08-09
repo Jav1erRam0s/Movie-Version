@@ -35,6 +35,10 @@
   --recomendacion-badge-type-miniserie-background: #cb3631;
   --recomendacion-badge-type-miniserie-color: whitesmoke;
 
+  --recomendacion-badge-year-border-color: #101214;
+  --recomendacion-badge-year-background: grey;
+  --recomendacion-badge-year-color: #101214;
+
   /* Modal Recomendacion */
 
   --modal-header-recomendacion-background: #101214;
@@ -94,6 +98,8 @@
   --modal-body-pelicula-info-color: #101214;
   --modal-body-pelicula-photo-border-background: #101214a0;
   --modal-body-pelicula-trailer-border-background: #101214a0;
+  --modal-body-pelicula-trailer-container-background: #101214;
+  --modal-body-pelicula-trailer-texto-color: whitesmoke;
 
   --modal-footer-pelicula-background: #101214;
   --modal-footer-pelicula-info-color: whitesmoke;
@@ -136,6 +142,8 @@
   --modal-body-documental-info-color: #101214;
   --modal-body-documental-photo-border-background: #101214a0;
   --modal-body-documental-trailer-border-background: #101214a0;
+  --modal-body-documental-trailer-container-background: #101214;
+  --modal-body-documental-trailer-texto-color: whitesmoke;
 
   --modal-footer-documental-background: #101214;
   --modal-footer-documental-info-color: whitesmoke;
@@ -178,6 +186,8 @@
   --modal-body-miniserie-info-color: #101214;
   --modal-body-miniserie-photo-border-background: #101214a0;
   --modal-body-miniserie-trailer-border-background: #101214a0;
+  --modal-body-miniserie-trailer-container-background: #101214;
+  --modal-body-miniserie-trailer-texto-color: whitesmoke;
 
   --modal-footer-miniserie-background: #101214;
   --modal-footer-miniserie-info-color: whitesmoke;
@@ -196,4 +206,11 @@
 
   /* CarouselComoDescargar */
   --carousel-item-slide-img-border: #101214;
+
+  --carousel-item-text-color: #006bf8;
+  --carousel-item-text-background: #212529;
+  --carousel-item-text--border-color: #101214;
+  --carousel-item-text-box-shadow: #101214;
+
+  --carousel-indicators-background-color: #006bf8;
 }

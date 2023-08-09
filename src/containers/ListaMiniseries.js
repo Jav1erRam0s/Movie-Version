@@ -23,7 +23,8 @@ class ListaMiniseries extends React.Component {
   /* <!-- Peticiones HTTPS --> */
   cargarMiniseries() {
     axios.get(`${url.path}/miniseries.json`).then((res) => {
-      const response = res.data.reverse();
+      const response = res.data;
+      /*.reverse();*/
       /*.sort(function (a, b) {
         if (a.title > b.title) return 1;
         if (a.title < b.title) return -1;
@@ -168,7 +169,7 @@ class ListaMiniseries extends React.Component {
                   style={{ height: "100%", padding: "0" }}
                 >
                   <div className="notificacion-miniseries">
-                    No se encontraron resultados que coincidan con la busqueda
+                    No se encontraron resultados que coincidan con la búsqueda
                   </div>
                 </div>
               )}

@@ -13,6 +13,7 @@
 .notificacion-miniseries {
   font-family: common-regular, common-regular;
   color: var(--notificacion-miniseries-color);
+  text-align: center;
   font-size: 15px;
   margin-bottom: 25px;
   margin-top: 20px;

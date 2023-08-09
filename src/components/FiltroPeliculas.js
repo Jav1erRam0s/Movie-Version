@@ -83,12 +83,12 @@ class FiltroPeliculas extends React.Component {
   }
 
   backDecada(){
-    document.getElementById("select-decada").value = "1980-a-inf";
+    document.getElementById("select-decada").value = "all";
     this.filtrar();
   }
   
   backDuracion(){
-    document.getElementById("select-duracion").value = "0-d-inf";
+    document.getElementById("select-duracion").value = "all";
     this.filtrar();
   }
 
@@ -142,12 +142,10 @@ class FiltroPeliculas extends React.Component {
               aria-label=".form-select-sm example"
               onChange={this.filtrar}
             >
-              <option value="1980-a-1989">1980's</option>
-              <option value="1990-a-1999">1990's</option>
-              <option value="2000-a-2009">2000's</option>
-              <option value="2010-a-2019">2010's</option>
-              <option value="2020-a-2029">2020's</option>
-              <option value="1980-a-inf" selected>
+              {this.props.decades.map((element, index) => {
+                return <option value={element}>{element+"'s"}</option>;
+              })}
+              <option value="all" selected>
                 Todos
               </option>
             </select>
@@ -167,7 +165,7 @@ class FiltroPeliculas extends React.Component {
               <option value="0-d-89">Menor a 1h:30min</option>
               <option value="90-d-150">Entre 1h:30min y 2h:30min</option>
               <option value="151-d-inf">Mayor a 2h:30min</option>
-              <option value="0-d-inf" selected>
+              <option value="all" selected>
                 Todos
               </option>
             </select>
@@ -175,16 +173,16 @@ class FiltroPeliculas extends React.Component {
         </div>
 
         <Tooltip placement="bottom" isOpen={this.state.tooltipBuscador} target="TooltipBuscador" toggle={this.toggleBuscador}>
-          Buscador
+          <span className="tooltip-peliculas">Buscador</span>
         </Tooltip>
         <Tooltip placement="bottom" isOpen={this.state.tooltipGenero} target="TooltipGenero" toggle={this.toggleGenero}>
-          Genero
+          <span className="tooltip-peliculas">Género</span>
         </Tooltip>
         <Tooltip placement="bottom" isOpen={this.state.tooltipDecada} target="TooltipDecada" toggle={this.toggleDecada}>
-          Decada
+          <span className="tooltip-peliculas">Década</span>
         </Tooltip>
         <Tooltip placement="bottom" isOpen={this.state.tooltipDuracion} target="TooltipDuracion" toggle={this.toggleDuracion}>
-          Duración
+          <span className="tooltip-peliculas">Duración</span>
         </Tooltip>
 
       </div>

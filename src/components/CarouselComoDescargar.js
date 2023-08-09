@@ -14,18 +14,38 @@ class CarouselComoDescargar extends React.Component {
         id={this.props.idCarousel}
         className="carousel slide"
       >
+        <div className="carousel-indicators">
+          {this.props.data.map((element, index) => {
+            if (index === 0) {
+              return (
+                <button type="button" data-bs-target={"#" + this.props.idCarousel} data-bs-slide-to={index} className="active" aria-current="true"></button>
+              );
+            } else {
+              return (
+                <button type="button" data-bs-target={"#" + this.props.idCarousel} data-bs-slide-to={index}></button>
+              );
+            }
+            })}
+        </div>
+
         <div className="carousel-inner carousel-body">
-          {this.props.imagenes.map((element, index) => {
+          {this.props.data.map((data, index) => {
             if (index === 0) {
               return (
                 <div className="carousel-item active carousel-item-slide">
-                  <img src={element} alt="..." />
+                  <img src={data.img} alt="..." />
+                  <div className="carousel-caption d-md-block">
+                    <p className="carousel-item-text">{data.txt}</p>
+                  </div>
                 </div>
               );
             } else {
               return (
                 <div className="carousel-item carousel-item-slide">
-                  <img src={element} alt="..." />
+                  <img src={data.img} alt="..." />
+                  <div className="carousel-caption d-md-block">
+                    <p className="carousel-item-text">{data.txt}</p>
+                  </div>
                 </div>
               );
             }

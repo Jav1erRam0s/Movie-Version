@@ -167,10 +167,13 @@
   flex-direction: row;
   justify-content: space-around;
 
+  height: 23px;
+
   padding-top: 3px;
   padding-bottom: 3px;
 
-  font-size: 12px;
+  font-family: common-regular, common-regular;
+  font-size: 10px;
 }
 
 #recomendacion-badge-type-pelicula {
@@ -192,7 +195,19 @@
 }
 
 #recomendacion-badge-year {
-  border: 1px solid black;
-  background: grey !important;
-  color: black;
+  border: 1px solid var(--recomendacion-badge-year-border-color);
+  background: var(--recomendacion-badge-year-background);
+  color: var(--recomendacion-badge-year-color);
+}
+
+.recomendacion-badge {
+  display: inline-flex;
+  align-items: center;
+
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 6px;
+  padding-right: 6px;
+
+  border-radius: 15px;
 }

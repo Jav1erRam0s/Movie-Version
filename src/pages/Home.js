@@ -25,21 +25,25 @@ class Home extends React.Component {
         <div id="container-home">
           <video src={Video} autoPlay muted></video>
           <audio id="reproductor-presentacion" src={Audio} autoPlay></audio>
-          <audio id="reproductor-titanic" src={Titanic}></audio>;
+          <audio id="reproductor-titanic" src={Titanic}></audio>
           <div id="contain-presentacion" style={{ display: "none" }}>
             <div id="presentacion-title">
               ¡ 👋 Bienvenid@s amantes del buen cine 👋 !
             </div>
             <div className="presentacion-txt">
-              Aqui encontrarás películas 📼, documentales y miniseries 📽️ que
+              Aquí encontrarás películas 📼, documentales y miniseries 📽️ que
               fueron seleccionadas como las mejores 🥇.
             </div>
             <div className="presentacion-txt">
-              Para cualquier recomendación pueden escribirme a 👉{" "}
-              <a href="mailto:javier.ramos.a.a@gmail.com" target="blank">
-                javier.ramos.a.a@gmail.com
-              </a>{" "}
-              👈 y puede ser la próxima en la lista del sistema 🙌.
+              Para cualquier recomendación podés escribirme a
+              <div style={{ display: "inline-block" }}>
+                👉{" "}
+                <a href="mailto:javier.ramos.a.a@gmail.com" target="blank">
+                  javier.ramos.a.a@gmail.com
+                </a>{" "}
+                👈
+              </div>
+              y tu film puede ser la próxima en el sistema 🙌.
             </div>
           </div>
         </div>

@@ -64,23 +64,32 @@ class Recomendacion extends React.Component {
     return valueMes;
   }
 
-  badgeForTypeVideo(){
-    switch(this.state.recomendacionDelMes.type){
+  badgeForTypeVideo() {
+    switch (this.state.recomendacionDelMes.type) {
       case "Pelicula":
-        return(
-          <span id="recomendacion-badge-type-pelicula" className="badge rounded-pill">
-            {this.state.recomendacionDelMes.type}
+        return (
+          <span
+            id="recomendacion-badge-type-pelicula"
+            className="recomendacion-badge"
+          >
+            Película
           </span>
         );
       case "Documental":
-        return(
-          <span id="recomendacion-badge-type-documental" className="badge rounded-pill">
+        return (
+          <span
+            id="recomendacion-badge-type-documental"
+            className="recomendacion-badge"
+          >
             {this.state.recomendacionDelMes.type}
           </span>
         );
       case "Miniserie":
-        return(
-          <span id="recomendacion-badge-type-miniserie" className="badge rounded-pill">
+        return (
+          <span
+            id="recomendacion-badge-type-miniserie"
+            className="recomendacion-badge"
+          >
             {this.state.recomendacionDelMes.type}
           </span>
         );
@@ -88,7 +97,6 @@ class Recomendacion extends React.Component {
         break;
     }
   }
-
 
   verTrailer() {
     if (this.state.recomendacionDelMes.trailer !== undefined) {
@@ -133,7 +141,7 @@ class Recomendacion extends React.Component {
           {/* Footer */}
           <div id="recomendacion-footer">
             {this.badgeForTypeVideo()}
-            <span id="recomendacion-badge-year" className="badge rounded-pill">
+            <span id="recomendacion-badge-year" className="recomendacion-badge">
               {this.state.recomendacionDelMes.year}
             </span>
           </div>

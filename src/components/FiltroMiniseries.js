@@ -103,10 +103,10 @@ class FiltroMiniseries extends React.Component {
         </div>
         
         <Tooltip placement="bottom" isOpen={this.state.tooltipBuscador} target="TooltipBuscador" toggle={this.toggleBuscador}>
-          Buscador
+          <span className="tooltip-miniseries">Buscador</span>
         </Tooltip>
         <Tooltip placement="bottom" isOpen={this.state.tooltipGenero} target="TooltipGenero" toggle={this.toggleGenero}>
-          Genero
+          <span className="tooltip-miniseries">Género</span>
         </Tooltip>
 
       </div>

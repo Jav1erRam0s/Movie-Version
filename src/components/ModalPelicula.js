@@ -7,10 +7,40 @@ import Duration from "../images/duration.png";
 import FilePelicula from "../images/file-pelicula.png";
 import Download from "../images/como-descargar.png";
 
+import { Tooltip } from 'reactstrap';
+
 class ModalPelicula extends React.Component {
   constructor(props) {
     super(props);
     this.handleSave = this.handleSave.bind(this);
+    
+    this.toggleEstreno = this.toggleEstreno.bind(this);
+    this.toggleTiempo = this.toggleTiempo.bind(this);
+    this.toggleTamaño = this.toggleTamaño.bind(this);
+
+    this.state = {
+      tooltipEstreno: false,
+      tooltipTiempo: false,
+      tooltipTamaño: false
+    }
+  }
+
+  toggleEstreno() {
+    this.setState({
+      tooltipEstreno: !this.state.tooltipEstreno
+    });
+  }
+
+  toggleTiempo() {
+    this.setState({
+      tooltipTiempo: !this.state.tooltipTiempo
+    });
+  }
+
+  toggleTamaño() {
+    this.setState({
+      tooltipTamaño: !this.state.tooltipTamaño
+    });
   }
 
   handleSave() {
@@ -32,7 +62,12 @@ class ModalPelicula extends React.Component {
 
   verTrailer(){ 
     if (this.props.pelicula.trailer !== undefined) {
-      return <div className="modal-pelicula-trailer"><iframe id="iframe-pelicula" src={this.props.pelicula.trailer+'?autoplay=0&mute=0&loop=0'} title={this.props.pelicula.title}></iframe></div>
+      return (
+      <div className="modal-pelicula-trailer-container">
+        <div className="modal-pelicula-trailer-texto"><b>Tráiler</b></div>
+        <iframe id="modal-pelicula-trailer-iframe" src={this.props.pelicula.trailer+'?autoplay=0&mute=0&loop=0'} title={this.props.pelicula.title}/>
+      </div>
+      );
     }
   }
 
@@ -56,16 +91,20 @@ class ModalPelicula extends React.Component {
               <img className="modal-pelicula-img" src={this.props.pelicula.photo} alt={this.props.pelicula.title}/>
               <div className="row align-items-center mb-4 pt-3">
                 <div className="col-6 align-content-column">
-                  <img src={Year} alt="year" className="modal-pelicula-img-info"/>
-                  <span className="modal-pelicula-info-body">{this.props.pelicula.year}</span>
+                  <div id="TooltipEstreno" className="align-content-info-pelicula">
+                    <img src={Year} alt="year" className="modal-pelicula-img-info"/>
+                    <span className="modal-pelicula-info-body">{this.props.pelicula.year}</span>
+                  </div>
                 </div>
                 <div className="col-6 align-content-column">
-                  <img src={Duration} alt="duration" className="modal-pelicula-img-info"/>
-                  <span className="modal-pelicula-info-body">{this.convertirHora()}</span>
+                  <div id="TooltipTiempo" className="align-content-info-pelicula">
+                    <img src={Duration} alt="duration" className="modal-pelicula-img-info"/>
+                    <span className="modal-pelicula-info-body">{this.convertirHora()}</span>
+                  </div>
                 </div>
               </div>
               <div className="modal-pelicula-info-body mb-3"><b>Sinopsis: </b>{this.props.pelicula.synopsis}</div>
-              <div className="modal-pelicula-info-body"><b>Genero: </b>{this.props.pelicula.genre.join(" | ")}</div>
+              <div className="modal-pelicula-info-body"><b>Género: </b>{this.props.pelicula.genre.join(" | ")}</div>
             </div>
             {this.verTrailer()}
           </ModalBody>
@@ -73,8 +112,10 @@ class ModalPelicula extends React.Component {
           <ModalFooter className="modal-pelicula-footer">
             <div className="row align-items-center" style={{ width: "100%", margin: "0" }}>
               <div className="col-6 align-content-column">
-                <img src={FilePelicula} alt="file-pelicula" className="modal-pelicula-img-info"/>
-                <span className="modal-pelicula-info-footer">{this.obtenerFormatoTamaño()}</span>
+                <div id="TooltipTamaño" className="align-content-info-pelicula">
+                  <img src={FilePelicula} alt="file-pelicula" className="modal-pelicula-img-info"/>
+                  <span className="modal-pelicula-info-footer">{this.obtenerFormatoTamaño()}</span>
+                </div>
               </div>
 
               <div className="col-6 align-content-column">
@@ -89,6 +130,16 @@ class ModalPelicula extends React.Component {
               </div>
             </div>
           </ModalFooter>
+
+          <Tooltip className="tooltip-modal-pelicula" placement="top" isOpen={this.state.tooltipEstreno} target="TooltipEstreno" toggle={this.toggleEstreno}>
+            <span className="tooltip-modal-pelicula">Estreno</span>
+          </Tooltip>
+          <Tooltip placement="top" isOpen={this.state.tooltipTiempo} target="TooltipTiempo" toggle={this.toggleTiempo}>
+            <span className="tooltip-modal-pelicula">Duración</span>
+          </Tooltip>
+          <Tooltip className="tooltip-modal-pelicula" placement="top" isOpen={this.state.tooltipTamaño} target="TooltipTamaño" toggle={this.toggleTamaño}>
+          <span className="tooltip-modal-pelicula">Tamaño</span>
+          </Tooltip>
 
         </Modal>
       </React.Fragment>

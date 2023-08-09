@@ -7,10 +7,40 @@ import Duration from "../images/duration.png";
 import FileDocumental from "../images/file-documental.png";
 import Download from "../images/como-descargar.png";
 
+import { Tooltip } from 'reactstrap';
+
 class ModalDocumental extends React.Component {
   constructor(props) {
     super(props);
     this.handleSave = this.handleSave.bind(this);
+    
+    this.toggleEstreno = this.toggleEstreno.bind(this);
+    this.toggleTiempo = this.toggleTiempo.bind(this);
+    this.toggleTamaño = this.toggleTamaño.bind(this);
+
+    this.state = {
+      tooltipEstreno: false,
+      tooltipTiempo: false,
+      tooltipTamaño: false
+    }
+  }
+
+  toggleEstreno() {
+    this.setState({
+      tooltipEstreno: !this.state.tooltipEstreno
+    });
+  }
+
+  toggleTiempo() {
+    this.setState({
+      tooltipTiempo: !this.state.tooltipTiempo
+    });
+  }
+
+  toggleTamaño() {
+    this.setState({
+      tooltipTamaño: !this.state.tooltipTamaño
+    });
   }
 
   handleSave() {
@@ -32,7 +62,12 @@ class ModalDocumental extends React.Component {
 
   verTrailer(){ 
     if (this.props.documental.trailer !== undefined) {
-      return <div className="modal-documental-trailer"><iframe id="iframe-documental" src={this.props.documental.trailer+'?autoplay=0&mute=0&loop=0'} title={this.props.documental.title}></iframe></div>
+      return (
+        <div className="modal-documental-trailer-container">
+          <div className="modal-documental-trailer-texto"><b>Tráiler</b></div>
+          <iframe id="modal-documental-trailer-iframe" src={this.props.documental.trailer+'?autoplay=0&mute=0&loop=0'} title={this.props.documental.title}/>
+        </div>
+      );
     }
   }
 
@@ -56,16 +91,20 @@ class ModalDocumental extends React.Component {
               <img className="modal-documental-img" src={this.props.documental.photo} alt={this.props.documental.title}/>
               <div className="row align-items-center mb-4 pt-3">
                 <div className="col-6 align-content-column">
-                  <img src={Year} alt="year" className="modal-documental-img-info"/>
-                  <span className="modal-documental-info-body">{this.props.documental.year}</span>
+                  <div id="TooltipEstreno" className="align-content-info-documental">
+                    <img src={Year} alt="year" className="modal-documental-img-info"/>
+                    <span className="modal-documental-info-body">{this.props.documental.year}</span>
+                  </div>
                 </div>
                 <div className="col-6 align-content-column">
-                  <img src={Duration} alt="duration" className="modal-documental-img-info"/>
-                  <span className="modal-documental-info-body">{this.convertirHora()}</span>
+                  <div id="TooltipTiempo" className="align-content-info-documental">
+                    <img src={Duration} alt="duration" className="modal-documental-img-info"/>
+                    <span className="modal-documental-info-body">{this.convertirHora()}</span>
+                  </div>
                 </div>
               </div>
               <div className="modal-documental-info-body mb-3"><b>Sinopsis: </b>{this.props.documental.synopsis}</div>
-              <div className="modal-documental-info-body"><b>Genero: </b>{this.props.documental.genre.join(" | ")}</div>
+              <div className="modal-documental-info-body"><b>Género: </b>{this.props.documental.genre.join(" | ")}</div>
             </div>
             {this.verTrailer()}
           </ModalBody>
@@ -73,8 +112,10 @@ class ModalDocumental extends React.Component {
           <ModalFooter className="modal-documental-footer">
             <div className="row align-items-center" style={{ width: "100%", margin: "0" }}>
               <div className="col-6 align-content-column">
-                <img src={FileDocumental} alt="file-documental" className="modal-documental-img-info"/>
-                <span className="modal-documental-info-footer">{this.obtenerFormatoTamaño()}</span>
+                <div id="TooltipTamaño" className="align-content-info-documental">
+                  <img src={FileDocumental} alt="file-documental" className="modal-documental-img-info"/>
+                  <span className="modal-documental-info-footer">{this.obtenerFormatoTamaño()}</span>
+                </div>
               </div>
 
               <div className="col-6 align-content-column">
@@ -89,6 +130,16 @@ class ModalDocumental extends React.Component {
               </div>
             </div>
           </ModalFooter>
+
+          <Tooltip placement="top" isOpen={this.state.tooltipEstreno} target="TooltipEstreno" toggle={this.toggleEstreno}>
+            <span className="tooltip-modal-documental">Estreno</span>
+          </Tooltip>
+          <Tooltip placement="top" isOpen={this.state.tooltipTiempo} target="TooltipTiempo" toggle={this.toggleTiempo}>
+            <span className="tooltip-modal-documental">Duración</span>
+          </Tooltip>
+          <Tooltip placement="top" isOpen={this.state.tooltipTamaño} target="TooltipTamaño" toggle={this.toggleTamaño}>
+            <span className="tooltip-modal-documental">Tamaño</span>
+          </Tooltip>
 
         </Modal>
       </React.Fragment>
