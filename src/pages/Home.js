@@ -1,7 +1,6 @@
 import React from "react";
 
 import Video from "../video/presentacion.mp4";
-import Audio from "../audio/presentacion.mp3";
 import Titanic from "../audio/James Horner - The Dream.mp3";
 
 import "../styles/Home.css";
@@ -23,8 +22,7 @@ class Home extends React.Component {
     return (
       <React.Fragment>
         <div id="container-home">
-          <video src={Video} autoPlay muted></video>
-          <audio id="reproductor-presentacion" src={Audio} autoPlay></audio>
+          <video src={Video} autoPlay></video>
           <audio id="reproductor-titanic" src={Titanic}></audio>
           <div id="contain-presentacion" style={{ display: "none" }}>
             <div id="presentacion-title">
