@@ -226,7 +226,7 @@ class ListaDocumentales extends React.Component {
                 </div>
               )}
             <div className="container text-center p-0">
-              <div className="row row-cols-2 row-cols-sm-2 row-cols-md-2 row-cols-lg-4">
+              <div className="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
                 {this.state.statusDocumentales === true &&
                   this.state.documentalesPage.map((element, index) => {
                     return (

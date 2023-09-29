@@ -174,7 +174,7 @@ class ListaMiniseries extends React.Component {
                 </div>
               )}
             <div className="container text-center p-0">
-              <div className="row row-cols-2 row-cols-sm-2 row-cols-md-2 row-cols-lg-4">
+              <div className="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
                 {this.state.statusMiniseries === true &&
                   this.state.miniseriesPage.map((element, index) => {
                     return (
