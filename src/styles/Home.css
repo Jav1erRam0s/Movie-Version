@@ -39,7 +39,7 @@ video {
 }
 
 #contain-presentacion {
-  height: 100%;
+  height: 100vh;
 
   position: absolute;
 

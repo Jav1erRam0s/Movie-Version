@@ -1,0 +1,31 @@
+/* Paginacion films */
+
+#section-pagination {
+  margin-top: auto !important;
+}
+
+.anclaje {
+  text-decoration: none;
+}
+
+.buttonControl {
+  font-family: common-regular, common-regular;
+  color: var(--button-control-peliculas-color);
+  font-size: 14px;
+}
+
+.buttonPage {
+  font-family: common-regular, common-regular;
+  color: var(--button-page-peliculas-color);
+  font-size: 14px;
+}
+
+.page-link {
+  height: 31px;
+  background: var(--page-link-peliculas-background) !important;
+  border-color: var(--page-link-peliculas-border-color) !important;
+}
+
+.page-link:hover {
+  background: var(--page-link-peliculas-background-hover) !important;
+}

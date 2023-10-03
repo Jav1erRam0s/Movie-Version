@@ -5,6 +5,8 @@ import FiltroPeliculas from "../components/FiltroPeliculas.js";
 import CardPelicula from "../components/CardPelicula.js";
 import "../styles/ListaPeliculas.css";
 
+import Pagination from "../components/Pagination.js";
+
 class ListaPeliculas extends React.Component {
   constructor(props) {
     super(props);
@@ -79,14 +81,13 @@ class ListaPeliculas extends React.Component {
       this.setState({ decades: listDecades });
     });
   }
-
   componentDidMount() {
     this.cargarPeliculas();
   }
   /* <!-- /Peticiones HTTPS --> */
 
-  /* <!-- Metodos Paginacion --> */
-  goToPage(page) {
+  /* <!-- Metodo de Paginacion --> */
+  updatePage = (page) => {
     this.setState({
       actualPage: page,
       peliculasPage: this.state.peliculasFilter.slice(
@@ -94,23 +95,10 @@ class ListaPeliculas extends React.Component {
         page * this.state.cantidadPeliculasPage
       ),
     });
-  }
-  previousPage() {
-    const nuevaPage = this.state.actualPage - 1;
-    if (nuevaPage >= 1) {
-      this.goToPage(nuevaPage);
-    }
-  }
-  nextPage() {
-    const cantidadPaginas = this.state.paginacion.length;
-    const nuevaPage = this.state.actualPage + 1;
-    if (nuevaPage <= cantidadPaginas) {
-      this.goToPage(nuevaPage);
-    }
-  }
-  /* <!-- /Metodos Paginacion --> */
+  };
+  /* <!-- /Metodo de Paginacion --> */
 
-  /* <!-- /Metodo Filtro --> */
+  /* <!-- Metodo Filtro --> */
   updateListPeliculas = (
     valuePelicula,
     valueGenero,
@@ -149,7 +137,7 @@ class ListaPeliculas extends React.Component {
       anioHasta = Number.POSITIVE_INFINITY;
     } else {
       anioDesde = parseInt(valueDecada);
-      anioHasta =  parseInt(valueDecada) + 9;
+      anioHasta = parseInt(valueDecada) + 9;
     }
 
     let newPeliculasFilter;
@@ -250,66 +238,11 @@ class ListaPeliculas extends React.Component {
             </div>
           </div>
           {/* BARRA DE PAGINACION */}
-          {this.state.statusPeliculas === true &&
-            this.state.paginacion.length >= 2 && (
-              <section id="section-pagination-peliculas">
-                <nav aria-label="Page navigation example">
-                  <ul className="nav-pagination pagination pagination-sm justify-content-center mb-0">
-                    <li className="page-item">
-                      <a href="#up" className="anclaje">
-                        <button
-                          className="page-link"
-                          onClick={() => this.previousPage()}
-                          aria-label="Previous"
-                        >
-                          <span
-                            aria-hidden="true"
-                            className="buttonControlPelicula"
-                          >
-                            <b>&laquo;</b>
-                          </span>
-                        </button>
-                      </a>
-                    </li>
-
-                    {this.state.statusPeliculas === true &&
-                      this.state.paginacion.map((element, index) => {
-                        return (
-                          <li className="page-item">
-                            <a href="#up" className="anclaje">
-                              <button
-                                className="page-link"
-                                onClick={() => this.goToPage(element)}
-                              >
-                                <span className="buttonPagePelicula">
-                                  {element}
-                                </span>
-                              </button>
-                            </a>
-                          </li>
-                        );
-                      })}
-
-                    <li className="page-item">
-                      <a href="#up" className="anclaje">
-                        <button
-                          className="page-link"
-                          onClick={() => this.nextPage()}
-                          aria-label="Next"
-                        >
-                          <span
-                            aria-hidden="true"
-                            className="buttonControlPelicula"
-                          >
-                            <b>&raquo;</b>
-                          </span>
-                        </button>
-                      </a>
-                    </li>
-                  </ul>
-                </nav>
-              </section>
-            )}
+          <Pagination
+            updatePage={this.updatePage}
+            paginas={this.state.paginacion}
+            paginaActual={this.state.actualPage}
+          />
         </div>
       </React.Fragment>
     );

@@ -5,6 +5,8 @@ import FiltroDocumentales from "../components/FiltroDocumentales.js";
 import CardDocumental from "../components/CardDocumental.js";
 import "../styles/ListaDocumentales.css";
 
+import Pagination from "../components/Pagination.js";
+
 class ListaDocumentales extends React.Component {
   constructor(props) {
     super(props);
@@ -54,7 +56,6 @@ class ListaDocumentales extends React.Component {
       }
       this.setState({ paginacion: list });
 
-
       var listGenres = [];
       response.forEach((element) => {
         listGenres = listGenres.concat(element.genre);
@@ -67,7 +68,6 @@ class ListaDocumentales extends React.Component {
       listGenres.sort();
       this.setState({ genres: listGenres });
 
-      
       var listDecades = [];
       response.forEach((element) => {
         listDecades.push(element.year - (element.year % 10));
@@ -86,8 +86,8 @@ class ListaDocumentales extends React.Component {
   }
   /* <!-- /Peticiones HTTPS --> */
 
-  /* <!-- Metodos Paginacion --> */
-  goToPage(page) {
+  /* <!-- Metodo de Paginacion --> */
+  updatePage = (page) => {
     this.setState({
       actualPage: page,
       documentalesPage: this.state.documentalesFilter.slice(
@@ -95,28 +95,20 @@ class ListaDocumentales extends React.Component {
         page * this.state.cantidadDocumentalesPage
       ),
     });
-  }
-  previousPage() {
-    const nuevaPage = this.state.actualPage - 1;
-    if (nuevaPage >= 1) {
-      this.goToPage(nuevaPage);
-    }
-  }
-  nextPage() {
-    const cantidadPaginas = this.state.paginacion.length;
-    const nuevaPage = this.state.actualPage + 1;
-    if (nuevaPage <= cantidadPaginas) {
-      this.goToPage(nuevaPage);
-    }
-  }
-  /* <!-- /Metodos Paginacion --> */
+  };
+  /* <!-- /Metodo de Paginacion --> */
 
-  /* <!-- /Metodo Filtro --> */
-  updateListDocumentales = (valuePelicula, valueGenero, valueDecada, valueDuracion) => {
+  /* <!-- Metodo Filtro --> */
+  updateListDocumentales = (
+    valuePelicula,
+    valueGenero,
+    valueDecada,
+    valueDuracion
+  ) => {
     //inicializamos las variables limites de 'duracion'
     let duracionDesde = 0;
     let duracionHasta = 0;
-    switch(valueDuracion){
+    switch (valueDuracion) {
       case "0-d-89":
         duracionDesde = 0;
         duracionHasta = 89;
@@ -145,13 +137,13 @@ class ListaDocumentales extends React.Component {
       anioHasta = Number.POSITIVE_INFINITY;
     } else {
       anioDesde = parseInt(valueDecada);
-      anioHasta =  parseInt(valueDecada) + 9;
+      anioHasta = parseInt(valueDecada) + 9;
     }
 
     let newDocumentalesFilter;
 
     // Previo al filtro evaluamos si filtramos por genero
-    if (valueGenero !== "all"){
+    if (valueGenero !== "all") {
       newDocumentalesFilter = this.state.documentales.filter(
         (pelicula) =>
           pelicula.title.toLowerCase().indexOf(valuePelicula.toLowerCase()) >
@@ -160,9 +152,9 @@ class ListaDocumentales extends React.Component {
           pelicula.year >= anioDesde &&
           pelicula.year <= anioHasta &&
           pelicula.duration >= duracionDesde &&
-          pelicula.duration <= duracionHasta)
-    }
-    else{
+          pelicula.duration <= duracionHasta
+      );
+    } else {
       newDocumentalesFilter = this.state.documentales.filter(
         (pelicula) =>
           pelicula.title.toLowerCase().indexOf(valuePelicula.toLowerCase()) >
@@ -170,7 +162,8 @@ class ListaDocumentales extends React.Component {
           pelicula.year >= anioDesde &&
           pelicula.year <= anioHasta &&
           pelicula.duration >= duracionDesde &&
-          pelicula.duration <= duracionHasta)
+          pelicula.duration <= duracionHasta
+      );
     }
 
     //inicializo la paginacion en la hoja 1
@@ -194,7 +187,7 @@ class ListaDocumentales extends React.Component {
       ),
       paginacion: listPaginacion,
     });
-  }
+  };
   /* <!-- /Metodo Filtro --> */
 
   render() {
@@ -211,7 +204,10 @@ class ListaDocumentales extends React.Component {
           <div className="row m-0" style={{ height: "100%" }}>
             {this.state.statusDocumentales === true &&
               this.state.documentales.length === 0 && (
-                <div className="col-12 align-content-column" style={{ height: "100%", padding: "0" }}>
+                <div
+                  className="col-12 align-content-column"
+                  style={{ height: "100%", padding: "0" }}
+                >
                   <div className="notificacion-documentales">
                     A la brevedad tendremos documentales
                   </div>
@@ -219,7 +215,10 @@ class ListaDocumentales extends React.Component {
               )}
             {this.state.statusDocumentales === true &&
               this.state.documentalesFilter.length === 0 && (
-                <div className="col-12 align-content-column" style={{ height: "100%", padding: "0" }}>
+                <div
+                  className="col-12 align-content-column"
+                  style={{ height: "100%", padding: "0" }}
+                >
                   <div className="notificacion-documentales">
                     No se encontraron resultados que coincidan con la búsqueda
                   </div>
@@ -239,60 +238,11 @@ class ListaDocumentales extends React.Component {
             </div>
           </div>
           {/* BARRA DE PAGINACION */}
-          {this.state.statusDocumentales === true &&
-            this.state.paginacion.length >= 2 && (
-              <section id="section-pagination-documentales">
-                <nav aria-label="Page navigation example">
-                  <ul
-                    className="nav-pagination pagination pagination-sm justify-content-center mb-0"
-                  >
-                    <li className="page-item">
-                      <a href="#up" className="anclaje">
-                        <button
-                          className="page-link"
-                          onClick={() => this.previousPage()}
-                          aria-label="Previous"
-                        >
-                          <span aria-hidden="true" className="buttonControlDocumental">
-                            <b>&laquo;</b>
-                          </span>
-                        </button>
-                      </a>
-                    </li>
-
-                    {this.state.statusDocumentales === true &&
-                      this.state.paginacion.map((element, index) => {
-                        return (
-                          <li className="page-item">
-                            <a href="#up" className="anclaje">
-                              <button
-                                className="page-link"
-                                onClick={() => this.goToPage(element)}
-                              >
-                                <span className="buttonPageDocumental">{element}</span>
-                              </button>
-                            </a>
-                          </li>
-                        );
-                      })}
-
-                    <li className="page-item">
-                      <a href="#up" className="anclaje">
-                        <button
-                          className="page-link"
-                          onClick={() => this.nextPage()}
-                          aria-label="Next"
-                        >
-                          <span aria-hidden="true" className="buttonControlDocumental">
-                            <b>&raquo;</b>
-                          </span>
-                        </button>
-                      </a>
-                    </li>
-                  </ul>
-                </nav>
-              </section>
-            )}
+          <Pagination
+            updatePage={this.updatePage}
+            paginas={this.state.paginacion}
+            paginaActual={this.state.actualPage}
+          />
         </div>
       </React.Fragment>
     );

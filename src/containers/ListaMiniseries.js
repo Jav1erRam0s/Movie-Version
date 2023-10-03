@@ -5,6 +5,8 @@ import FiltroMiniseries from "../components/FiltroMiniseries.js";
 import CardMiniserie from "../components/CardMiniserie.js";
 import "../styles/ListaMiniseries.css";
 
+import Pagination from "../components/Pagination.js";
+
 class ListaMiniseries extends React.Component {
   constructor(props) {
     super(props);
@@ -72,8 +74,8 @@ class ListaMiniseries extends React.Component {
   }
   /* <!-- /Peticiones HTTPS --> */
 
-  /* <!-- Metodos Paginacion --> */
-  goToPage(page) {
+  /* <!-- Metodo de Paginacion --> */
+  updatePage = (page) => {
     this.setState({
       actualPage: page,
       miniseriesPage: this.state.miniseriesFilter.slice(
@@ -81,23 +83,10 @@ class ListaMiniseries extends React.Component {
         page * this.state.cantidadMiniseriesPage
       ),
     });
-  }
-  previousPage() {
-    const nuevaPage = this.state.actualPage - 1;
-    if (nuevaPage >= 1) {
-      this.goToPage(nuevaPage);
-    }
-  }
-  nextPage() {
-    const cantidadPaginas = this.state.paginacion.length;
-    const nuevaPage = this.state.actualPage + 1;
-    if (nuevaPage <= cantidadPaginas) {
-      this.goToPage(nuevaPage);
-    }
-  }
-  /* <!-- /Metodos Paginacion --> */
+  };
+  /* <!-- /Metodo de Paginacion --> */
 
-  /* <!-- /Metodo Filtro --> */
+  /* <!-- Metodo Filtro --> */
   updateListMiniseries = (valueMiniserie, valueGenero) => {
     let newMiniseriesFilter;
 
@@ -187,66 +176,11 @@ class ListaMiniseries extends React.Component {
             </div>
           </div>
           {/* BARRA DE PAGINACION */}
-          {this.state.statusMiniseries === true &&
-            this.state.paginacion.length >= 2 && (
-              <section id="section-pagination-miniseries">
-                <nav aria-label="Page navigation example">
-                  <ul className="nav-pagination pagination pagination-sm justify-content-center mb-0">
-                    <li className="page-item">
-                      <a href="#up" className="anclaje">
-                        <button
-                          className="page-link"
-                          onClick={() => this.previousPage()}
-                          aria-label="Previous"
-                        >
-                          <span
-                            aria-hidden="true"
-                            className="buttonControlMiniserie"
-                          >
-                            <b>&laquo;</b>
-                          </span>
-                        </button>
-                      </a>
-                    </li>
-
-                    {this.state.statusMiniseries === true &&
-                      this.state.paginacion.map((element, index) => {
-                        return (
-                          <li className="page-item">
-                            <a href="#up" className="anclaje">
-                              <button
-                                className="page-link"
-                                onClick={() => this.goToPage(element)}
-                              >
-                                <span className="buttonPageMiniserie">
-                                  {element}
-                                </span>
-                              </button>
-                            </a>
-                          </li>
-                        );
-                      })}
-
-                    <li className="page-item">
-                      <a href="#up" className="anclaje">
-                        <button
-                          className="page-link"
-                          onClick={() => this.nextPage()}
-                          aria-label="Next"
-                        >
-                          <span
-                            aria-hidden="true"
-                            className="buttonControlMiniserie"
-                          >
-                            <b>&raquo;</b>
-                          </span>
-                        </button>
-                      </a>
-                    </li>
-                  </ul>
-                </nav>
-              </section>
-            )}
+          <Pagination
+            updatePage={this.updatePage}
+            paginas={this.state.paginacion}
+            paginaActual={this.state.actualPage}
+          />
         </div>
       </React.Fragment>
     );
