@@ -18,7 +18,7 @@ class ListaPeliculas extends React.Component {
       genres: [],
       decades: [],
       actualPage: 1,
-      cantidadPeliculasPage: 12,
+      cantidadPeliculasPage: 24,
       statusPeliculas: false,
     };
   }

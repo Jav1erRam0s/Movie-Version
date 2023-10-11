@@ -20,6 +20,13 @@
   }
 }
 
+@media (min-width: 768px) and (max-width: 991px) {
+  #presentacion-title {
+    font-size: 26px !important;
+    width: 100% !important;
+  }
+}
+
 #container-home {
   height: 100%;
 
@@ -111,7 +118,7 @@ video {
   font-size: 28px;
   color: var(--presentacion-title-color);
 
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 
   width: 75%;
   align-self: center;

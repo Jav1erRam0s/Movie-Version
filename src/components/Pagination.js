@@ -28,21 +28,22 @@ class Pagination extends React.Component {
           <section id="section-pagination">
             <nav aria-label="Page navigation example">
               <ul className="nav-pagination pagination pagination-sm justify-content-center mb-0">
+                {/* Button Previous */}
                 <li className="page-item">
                   <a href="#up" className="anclaje">
                     <button
-                      className="page-link"
+                      className="page-link page-link-navegator"
                       onClick={() => this.previousPage()}
                       aria-label="Previous"
                     >
                       <span aria-hidden="true" className="buttonControl">
-                        <b>&laquo;</b>
+                        <b>◄</b>
                       </span>
                     </button>
                   </a>
                 </li>
-
-                {this.props.paginas.map((element, index) => {
+                {/* Info */}
+                {/* {this.props.paginas.map((element, index) => {
                   return (
                     <li className="page-item">
                       <a href="#up" className="anclaje">
@@ -55,17 +56,24 @@ class Pagination extends React.Component {
                       </a>
                     </li>
                   );
-                })}
-
+                })} */}
+                <li className="page-item info-pagination">
+                  <div className="page-link">
+                    <span className="buttonPage">
+                      {this.props.paginaActual} / {this.props.paginas.length}
+                    </span>
+                  </div>
+                </li>
+                {/* Button Next */}
                 <li className="page-item">
                   <a href="#up" className="anclaje">
                     <button
-                      className="page-link"
+                      className="page-link page-link-navegator"
                       onClick={() => this.nextPage()}
                       aria-label="Next"
                     >
                       <span aria-hidden="true" className="buttonControl">
-                        <b>&raquo;</b>
+                        <b>►</b>
                       </span>
                     </button>
                   </a>

@@ -11,7 +11,7 @@
 .buttonControl {
   font-family: common-regular, common-regular;
   color: var(--button-control-peliculas-color);
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .buttonPage {
@@ -24,8 +24,18 @@
   height: 31px;
   background: var(--page-link-peliculas-background) !important;
   border-color: var(--page-link-peliculas-border-color) !important;
+
+  text-align: center;
 }
 
-.page-link:hover {
+.page-link-navegator{
+  width: 31px;
+}
+
+.page-link-navegator:hover {
   background: var(--page-link-peliculas-background-hover) !important;
+}
+
+.info-pagination{
+  width: 65px;
 }

@@ -18,6 +18,15 @@
   }
 }
 
+@media (min-width: 768px) and (max-width: 991px) {
+  .modal-dialog {
+    max-width: 700px !important;
+  }
+  #modal-pelicula-trailer-iframe {
+    height: 350px !important;
+  }
+}
+
 .tooltip-modal-pelicula {
   font-family: common-regular, common-regular;
   color: white;
