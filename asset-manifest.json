@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Movie-Version/static/css/main.c911130c.css",
-    "main.js": "/Movie-Version/static/js/main.42baad39.js",
+    "main.css": "/Movie-Version/static/css/main.5d9ee96a.css",
+    "main.js": "/Movie-Version/static/js/main.2c0cbdbe.js",
     "static/media/James Horner - The Dream.mp3": "/Movie-Version/static/media/James Horner - The Dream.5a34da33b690e5503c0a.mp3",
     "static/media/presentacion.mp4": "/Movie-Version/static/media/presentacion.069dc0916133738bfd7b.mp4",
     "static/media/fondo.gif": "/Movie-Version/static/media/fondo.5c0eaef8103d0a51df82.gif",
@@ -35,11 +35,11 @@
     "static/media/year.png": "/Movie-Version/static/media/year.cae628582bb654f55074.png",
     "static/media/capitulos.png": "/Movie-Version/static/media/capitulos.42d3b220ab67ccf02a9f.png",
     "index.html": "/Movie-Version/index.html",
-    "main.c911130c.css.map": "/Movie-Version/static/css/main.c911130c.css.map",
-    "main.42baad39.js.map": "/Movie-Version/static/js/main.42baad39.js.map"
+    "main.5d9ee96a.css.map": "/Movie-Version/static/css/main.5d9ee96a.css.map",
+    "main.2c0cbdbe.js.map": "/Movie-Version/static/js/main.2c0cbdbe.js.map"
   },
   "entrypoints": [
-    "static/css/main.c911130c.css",
-    "static/js/main.42baad39.js"
+    "static/css/main.5d9ee96a.css",
+    "static/js/main.2c0cbdbe.js"
   ]
 }
