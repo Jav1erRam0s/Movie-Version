@@ -134,7 +134,7 @@ class Recomendacion extends React.Component {
             <img
               id="recomendacion-img"
               src={this.state.recomendacionDelMes.photo}
-              alt="recomendacion-img"
+              alt={this.state.recomendacionDelMes.title}
             />
             {this.verTrailer()}
           </div>

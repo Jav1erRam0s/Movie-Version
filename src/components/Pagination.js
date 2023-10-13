@@ -36,8 +36,8 @@ class Pagination extends React.Component {
                       onClick={() => this.previousPage()}
                       aria-label="Previous"
                     >
-                      <span aria-hidden="true" className="buttonControl">
-                        <b>◄</b>
+                      <span className="buttonControl">
+                        ◄
                       </span>
                     </button>
                   </a>
@@ -72,8 +72,8 @@ class Pagination extends React.Component {
                       onClick={() => this.nextPage()}
                       aria-label="Next"
                     >
-                      <span aria-hidden="true" className="buttonControl">
-                        <b>►</b>
+                      <span className="buttonControl">
+                        ►
                       </span>
                     </button>
                   </a>
