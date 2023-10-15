@@ -8,12 +8,6 @@
   text-decoration: none;
 }
 
-.buttonControl {
-  font-family: common-regular, common-regular;
-  color: var(--button-control-peliculas-color);
-  font-size: 15px;
-}
-
 .buttonPage {
   font-family: common-regular, common-regular;
   color: var(--button-page-peliculas-color);
@@ -28,14 +22,32 @@
   text-align: center;
 }
 
-.page-link-navegator{
+.page-link-navegator {
   width: 31px;
+}
+
+.img-page-previous {
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/previous.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+}
+
+.img-page-next {
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/next.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
 }
 
 .page-link-navegator:hover {
   background: var(--page-link-peliculas-background-hover) !important;
 }
 
-.info-pagination{
+.info-pagination {
   width: 65px;
 }

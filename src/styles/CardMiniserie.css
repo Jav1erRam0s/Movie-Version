@@ -14,7 +14,12 @@
   box-shadow: 0px 0px 4px var(--card-miniserie-boxshadow);
   border-radius: 10px !important;
   aspect-ratio: 1 / 1;
+ 
   background-color: #212529;
+  background-image: url("../images/loader.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 40%;
 }
 
 .card-miniserie:hover {
