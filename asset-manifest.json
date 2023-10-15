@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Movie-Version/static/css/main.5d9ee96a.css",
-    "main.js": "/Movie-Version/static/js/main.2c0cbdbe.js",
+    "main.css": "/Movie-Version/static/css/main.ebc7b3e2.css",
+    "main.js": "/Movie-Version/static/js/main.077e3c76.js",
     "static/media/James Horner - The Dream.mp3": "/Movie-Version/static/media/James Horner - The Dream.5a34da33b690e5503c0a.mp3",
     "static/media/presentacion.mp4": "/Movie-Version/static/media/presentacion.069dc0916133738bfd7b.mp4",
     "static/media/fondo.gif": "/Movie-Version/static/media/fondo.5c0eaef8103d0a51df82.gif",
@@ -20,6 +20,7 @@
     "static/media/descarga-o-copia-de-archivos-2.png": "/Movie-Version/static/media/descarga-o-copia-de-archivos-2.a73fa2cc0ecc7dec4d83.png",
     "static/media/descarga-o-copia-de-archivos-3.png": "/Movie-Version/static/media/descarga-o-copia-de-archivos-3.22d12435b59c379dd802.png",
     "static/media/descarga-o-copia-de-archivos-4.png": "/Movie-Version/static/media/descarga-o-copia-de-archivos-4.61b28b12a9c9365b01b0.png",
+    "static/media/loader.gif": "/Movie-Version/static/media/loader.ef8126d1f7d755a656fb.gif",
     "static/media/Jost-Black.ttf": "/Movie-Version/static/media/Jost-Black.6bda96786c9cd0bc15c0.ttf",
     "static/media/descarga-e-instalacion-de-terabox-for-pc-4.png": "/Movie-Version/static/media/descarga-e-instalacion-de-terabox-for-pc-4.d0a235531946b5fb8339.png",
     "static/media/como-descargar.png": "/Movie-Version/static/media/como-descargar.8293df655083e4ecf995.png",
@@ -35,11 +36,11 @@
     "static/media/year.png": "/Movie-Version/static/media/year.cae628582bb654f55074.png",
     "static/media/capitulos.png": "/Movie-Version/static/media/capitulos.42d3b220ab67ccf02a9f.png",
     "index.html": "/Movie-Version/index.html",
-    "main.5d9ee96a.css.map": "/Movie-Version/static/css/main.5d9ee96a.css.map",
-    "main.2c0cbdbe.js.map": "/Movie-Version/static/js/main.2c0cbdbe.js.map"
+    "main.ebc7b3e2.css.map": "/Movie-Version/static/css/main.ebc7b3e2.css.map",
+    "main.077e3c76.js.map": "/Movie-Version/static/js/main.077e3c76.js.map"
   },
   "entrypoints": [
-    "static/css/main.5d9ee96a.css",
-    "static/js/main.2c0cbdbe.js"
+    "static/css/main.ebc7b3e2.css",
+    "static/js/main.077e3c76.js"
   ]
 }
