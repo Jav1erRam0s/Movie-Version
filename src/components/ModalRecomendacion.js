@@ -1,5 +1,5 @@
 import React from "react";
-import { Modal, ModalHeader } from "reactstrap";
+import { Modal, ModalHeader, ModalBody } from "reactstrap";
 import "../styles/ModalRecomendacion.css";
 
 class ModalRecomendacion extends React.Component {
@@ -15,7 +15,12 @@ class ModalRecomendacion extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Modal contentClassName="modal-content-recomendacion" size="lg" isOpen={this.props.estadoModal} centered>
+        <Modal
+          contentClassName="modal-content-recomendacion"
+          size="lg"
+          isOpen={this.props.estadoModal}
+          centered
+        >
           <ModalHeader
             toggle={this.handleSave}
             cssModule={{ "modal-title": "w-100 text-center m-0" }}
@@ -25,11 +30,20 @@ class ModalRecomendacion extends React.Component {
               <b>{this.props.recomendacion.title}</b>
             </span>
           </ModalHeader>
-          
-          <iframe id="iframe-recomendacion" src={this.props.recomendacion.trailer+'?autoplay=1&mute=0&loop=0'} title={this.props.recomendacion.title}></iframe>
+
+          <ModalBody
+            className="modal-recomendacion-body"
+          >
+            <iframe
+              id="iframe-recomendacion"
+              src={this.props.recomendacion.trailer + "?autoplay=1&mute=0&loop=0"}
+              title={this.props.recomendacion.title}
+            ></iframe>
+          </ModalBody>
+
         </Modal>
       </React.Fragment>
-    );  
+    );
   }
 }
 
