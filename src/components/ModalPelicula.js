@@ -74,7 +74,7 @@ class ModalPelicula extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Modal size="lg" scrollable="true" isOpen={this.props.estadoModal} centered>
+        <Modal contentClassName="modal-content-pelicula" size="lg" scrollable="true" isOpen={this.props.estadoModal} centered>
  
           <ModalHeader
             toggle={this.handleSave}
@@ -86,7 +86,9 @@ class ModalPelicula extends React.Component {
             </span>
           </ModalHeader>
  
-          <ModalBody>
+          <ModalBody
+            className="modal-pelicula-body"
+          >
             <div id="modal-info">
               <img className="modal-pelicula-img" src={this.props.pelicula.photo} alt={this.props.pelicula.title}/>
               <div className="row align-items-center mb-4 pt-3">

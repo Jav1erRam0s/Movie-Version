@@ -41,6 +41,8 @@
 
   /* Modal Recomendacion */
 
+  --modal-content-recomendacion-background: #101214;
+
   --modal-header-recomendacion-background: #101214;
   --modal-recomendacion-title-color: whitesmoke;
   --modal-recomendacion-btn-close-background: whitesmoke;
@@ -91,10 +93,13 @@
   --card-pelicula-boxshadow-hover: rgba(14, 44, 62, 0.7);
 
   /* ModalPelicula */
+  --modal-content-pelicula-background: #101214;
+
   --modal-header-pelicula-background: #101214;
   --modal-header-pelicula-info-color: whitesmoke;
   --modal-header-pelicula-btn-close-background: whitesmoke;
 
+  --modal-body-pelicula-background: whitesmoke;
   --modal-body-pelicula-info-color: #101214;
   --modal-body-pelicula-photo-border-background: #101214a0;
   --modal-body-pelicula-trailer-border-background: #101214a0;
@@ -135,10 +140,13 @@
   --card-documental-boxshadow-hover: rgba(14, 44, 62, 0.7);
 
   /* ModalDocumentales */
+  --modal-content-documental-background: #101214;
+
   --modal-header-documental-background: #101214;
   --modal-header-documental-info-color: whitesmoke;
   --modal-header-documental-btn-close-background: whitesmoke;
 
+  --modal-body-documental-background: whitesmoke;
   --modal-body-documental-info-color: #101214;
   --modal-body-documental-photo-border-background: #101214a0;
   --modal-body-documental-trailer-border-background: #101214a0;
@@ -179,10 +187,13 @@
   --card-miniserie-boxshadow-hover: rgba(14, 44, 62, 0.7);
 
   /* ModalMiniseries */
+  --modal-content-miniserie-background: #101214;
+
   --modal-header-miniserie-background: #101214;
   --modal-header-miniserie-info-color: whitesmoke;
   --modal-header-miniserie-btn-close-background: whitesmoke;
 
+  --modal-body-miniserie-background: whitesmoke;
   --modal-body-miniserie-info-color: #101214;
   --modal-body-miniserie-photo-border-background: #101214a0;
   --modal-body-miniserie-trailer-border-background: #101214a0;

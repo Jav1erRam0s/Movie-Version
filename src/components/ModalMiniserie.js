@@ -67,7 +67,7 @@ class ModalMiniserie extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Modal size="lg" scrollable="true" isOpen={this.props.estadoModal} centered>
+        <Modal contentClassName="modal-content-miniserie" size="lg" scrollable="true" isOpen={this.props.estadoModal} centered>
  
           <ModalHeader
             toggle={this.handleSave}
@@ -79,7 +79,9 @@ class ModalMiniserie extends React.Component {
             </span>
           </ModalHeader>
  
-          <ModalBody>
+          <ModalBody
+            className="modal-miniserie-body"
+          >
             <div id="modal-info">
               <img className="modal-miniserie-img" src={this.props.miniserie.photo} alt={this.props.miniserie.title}/>
               <div className="row align-items-center mb-4 pt-3">

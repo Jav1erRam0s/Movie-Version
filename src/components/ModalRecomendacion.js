@@ -15,7 +15,7 @@ class ModalRecomendacion extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Modal size="lg" isOpen={this.props.estadoModal} centered>
+        <Modal contentClassName="modal-content-recomendacion" size="lg" isOpen={this.props.estadoModal} centered>
           <ModalHeader
             toggle={this.handleSave}
             cssModule={{ "modal-title": "w-100 text-center m-0" }}

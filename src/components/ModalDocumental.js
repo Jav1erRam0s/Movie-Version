@@ -74,7 +74,7 @@ class ModalDocumental extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Modal size="lg" scrollable="true" isOpen={this.props.estadoModal} centered>
+        <Modal contentClassName="modal-content-documental" size="lg" scrollable="true" isOpen={this.props.estadoModal} centered>
  
           <ModalHeader
             toggle={this.handleSave}
@@ -86,7 +86,9 @@ class ModalDocumental extends React.Component {
             </span>
           </ModalHeader>
  
-          <ModalBody>
+          <ModalBody
+            className="modal-documental-body"
+          >
             <div id="modal-info">
               <img className="modal-documental-img" src={this.props.documental.photo} alt={this.props.documental.title}/>
               <div className="row align-items-center mb-4 pt-3">

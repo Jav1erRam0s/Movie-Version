@@ -15,6 +15,13 @@
   }
 }
 
+/* Modal */
+
+.modal-content-recomendacion {
+  background-color: var(--modal-content-recomendacion-background) !important;
+  border: none !important;
+}
+
 /* Modal Header */
 
 .modal-recomendacion-header {
