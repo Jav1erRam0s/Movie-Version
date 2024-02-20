@@ -121,7 +121,7 @@ class ModalDocumental extends React.Component {
               </div>
 
               <div className="col-6 align-content-column">
-              <a href={this.props.documental.download} target="blank">
+              <a href={this.props.documental.download} target="blank" rel="noreferrer nofollow noopener">
                 <button type="button" href={this.props.documental.download} className="btn btn-dark btn-sm btn-block">
                   <div className="align-content-column">
                     <img src={Download} alt="download" className="modal-documental-img-info"/>

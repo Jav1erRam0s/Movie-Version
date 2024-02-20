@@ -114,7 +114,7 @@ class ModalMiniserie extends React.Component {
               </div>
 
               <div className="col-6 align-content-column">
-              <a href={this.props.miniserie.download} target="blank">
+              <a href={this.props.miniserie.download} target="blank" rel="noreferrer nofollow noopener">
                 <button type="button" href={this.props.miniserie.download} className="btn btn-dark btn-sm btn-block">
                   <div className="align-content-column">
                     <img src={Download} alt="download" className="modal-miniserie-img-info"/>

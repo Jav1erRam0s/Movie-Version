@@ -53,7 +53,11 @@ class FiltroMiniseries extends React.Component {
     this.setState({
       valorInput: "",
     });
-    document.getElementById("input-miniserie").value = "";
+    
+    var element = document.getElementById("input-miniserie");
+    element.value = ""
+    element.focus();
+
     this.filtrar();
   }
 

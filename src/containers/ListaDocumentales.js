@@ -205,8 +205,7 @@ class ListaDocumentales extends React.Component {
             {this.state.statusDocumentales === true &&
               this.state.documentales.length === 0 && (
                 <div
-                  className="col-12 align-content-column"
-                  style={{ height: "100%", padding: "0" }}
+                  className="col-12 align-content-column container-notificacion"
                 >
                   <div className="notificacion-documentales">
                     A la brevedad tendremos documentales
@@ -216,8 +215,7 @@ class ListaDocumentales extends React.Component {
             {this.state.statusDocumentales === true &&
               this.state.documentalesFilter.length === 0 && (
                 <div
-                  className="col-12 align-content-column"
-                  style={{ height: "100%", padding: "0" }}
+                  className="col-12 align-content-column container-notificacion"
                 >
                   <div className="notificacion-documentales">
                     No se encontraron resultados que coincidan con la búsqueda

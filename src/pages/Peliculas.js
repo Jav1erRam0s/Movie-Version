@@ -8,12 +8,11 @@ class Peliculas extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <a name="up" href="-">
-          {""}
-        </a>
-        <div id="body-peliculas">
-          <ListaPeliculas />
-        </div>
+        <section id="top" className="ancla">
+          <div id="body-peliculas">
+            <ListaPeliculas />
+          </div>
+        </section>
       </React.Fragment>
     );
   }
