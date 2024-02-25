@@ -1,10 +1,9 @@
 {
   "files": {
-    "main.css": "/Movie-Version/static/css/main.6f60fa4f.css",
-    "main.js": "/Movie-Version/static/js/main.92c629e9.js",
-    "static/media/James Horner - The Dream.mp3": "/Movie-Version/static/media/James Horner - The Dream.5a34da33b690e5503c0a.mp3",
-    "static/media/presentacion.mp4": "/Movie-Version/static/media/presentacion.069dc0916133738bfd7b.mp4",
-    "static/media/fondo.gif": "/Movie-Version/static/media/fondo.5c0eaef8103d0a51df82.gif",
+    "main.css": "/Movie-Version/static/css/main.5d76c5ff.css",
+    "main.js": "/Movie-Version/static/js/main.de5a273b.js",
+    "static/media/FM-84.ft.Ollie.Wride-Never.Stop.mp4": "/Movie-Version/static/media/FM-84.ft.Ollie.Wride-Never.Stop.c96816900ff7f4c8fd16.mp4",
+    "static/media/Cortina.mp4": "/Movie-Version/static/media/Cortina.069dc0916133738bfd7b.mp4",
     "static/media/descarga-o-copia-de-archivos-1.png": "/Movie-Version/static/media/descarga-o-copia-de-archivos-1.50ea407a05405d72bedb.png",
     "static/media/descarga-e-instalacion-de-terabox-for-pc-3.png": "/Movie-Version/static/media/descarga-e-instalacion-de-terabox-for-pc-3.56c9b409b136acf541c7.png",
     "static/media/registracion-de-cuenta-2.png": "/Movie-Version/static/media/registracion-de-cuenta-2.b71985b1d029273d3fe8.png",
@@ -36,11 +35,11 @@
     "static/media/year.png": "/Movie-Version/static/media/year.cae628582bb654f55074.png",
     "static/media/capitulos.png": "/Movie-Version/static/media/capitulos.42d3b220ab67ccf02a9f.png",
     "index.html": "/Movie-Version/index.html",
-    "main.6f60fa4f.css.map": "/Movie-Version/static/css/main.6f60fa4f.css.map",
-    "main.92c629e9.js.map": "/Movie-Version/static/js/main.92c629e9.js.map"
+    "main.5d76c5ff.css.map": "/Movie-Version/static/css/main.5d76c5ff.css.map",
+    "main.de5a273b.js.map": "/Movie-Version/static/js/main.de5a273b.js.map"
   },
   "entrypoints": [
-    "static/css/main.6f60fa4f.css",
-    "static/js/main.92c629e9.js"
+    "static/css/main.5d76c5ff.css",
+    "static/js/main.de5a273b.js"
   ]
 }
