@@ -4,6 +4,7 @@
 #body-documentales {
   background-color: var(--body-documentales-background);
   height: 100%;
+  min-height: 100vh;
 
   padding: 20px;
 }

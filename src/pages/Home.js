@@ -1,53 +1,41 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
-import Video from "../video/presentacion.mp4";
-import Titanic from "../audio/James Horner - The Dream.mp3";
+import VideoCortina from "../videos/Cortina.mp4";
+import VideoMusical from "../videos/FM-84.ft.Ollie.Wride-Never.Stop.mp4";
 
 import "../styles/Home.css";
 
-class Home extends React.Component {
-  componentDidMount() {
-    const video = document.querySelector("video");
+const Home = () => {
+  const navigate = useNavigate();
 
-    video.addEventListener("ended", (event) => {
+  React.useEffect(() => {
+    const videoCortina = document.getElementById("video-cortina");
+
+    videoCortina.addEventListener("ended", (event) => {
       const mensaje = document.getElementById("contain-presentacion");
       mensaje.style.display = "flex";
-
-      const audioTitanic = document.getElementById("reproductor-titanic");
-      audioTitanic.play();
+      let videoMusical = document.getElementById("video-musical");
+      videoMusical.play();
     });
-  }
 
-  render() {
-    return (
-      <React.Fragment>
-        <div id="container-home">
-          <video src={Video} autoPlay></video>
-          <audio id="reproductor-titanic" src={Titanic}></audio>
-          <div id="contain-presentacion" style={{ display: "none" }}>
-            <div id="presentacion-title">
-              ¡ 👋 Bienvenid@s amantes del buen cine 👋 !
-            </div>
-            <div className="presentacion-txt">
-              Aquí encontrarás películas 📼, documentales y miniseries 📽️ que
-              fueron seleccionadas como las mejores 🥇.
-            </div>
-            <div className="presentacion-txt">
-              Para cualquier recomendación podés escribirme a
-              <div style={{ display: "inline-block" }}>
-                👉{" "}
-                <a href="mailto:javier.ramos.a.a@gmail.com" target="blank">
-                  javier.ramos.a.a@gmail.com
-                </a>{" "}
-                👈
-              </div>
-              y tu film puede ser la próxima en el sistema 🙌.
-            </div>
-          </div>
+    const videoMusical = document.getElementById("video-musical");
+
+    videoMusical.addEventListener("ended", (event) => {
+      navigate("/peliculas");
+    });
+  }, [navigate]);
+
+  return (
+    <React.Fragment>
+      <div id="container-home">
+        <video id="video-cortina" src={VideoCortina} autoPlay></video>
+        <div id="contain-presentacion" style={{ display: "none" }}>
+          <video id="video-musical" src={VideoMusical} controls></video>
         </div>
-      </React.Fragment>
-    );
-  }
-}
+      </div>
+    </React.Fragment>
+  );
+};
 
 export default Home;
