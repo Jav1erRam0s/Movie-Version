@@ -30,7 +30,7 @@ class Pagination extends React.Component {
               <ul className="nav-pagination pagination pagination-sm justify-content-center mb-0">
                 {/* Button Previous */}
                 <li className="page-item">
-                  <a href="#up" className="anclaje">
+                  <a href="#top" className="anclaje">
                     <button
                       className="page-link page-link-navegator"
                       onClick={() => this.previousPage()}
@@ -64,7 +64,7 @@ class Pagination extends React.Component {
                 </li>
                 {/* Button Next */}
                 <li className="page-item">
-                  <a href="#up" className="anclaje">
+                  <a href="#top" className="anclaje">
                     <button
                       className="page-link page-link-navegator"
                       onClick={() => this.nextPage()}

@@ -33,6 +33,13 @@
   font-size: 13px;
 }
 
+/* Modal */
+
+.modal-content-pelicula {
+  background-color: var(--modal-content-pelicula-background) !important;
+  border: none !important;
+}
+
 /* Modal Header */
 
 .modal-pelicula-header {
@@ -61,6 +68,10 @@
 }
 
 /* Modal Body */
+
+.modal-pelicula-body {
+  background-color: var(--modal-body-pelicula-background);
+}
 
 #modal-info {
   min-height: 200px;

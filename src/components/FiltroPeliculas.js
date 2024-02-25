@@ -73,7 +73,11 @@ class FiltroPeliculas extends React.Component {
     this.setState({
       valorInput: "",
     });
-    document.getElementById("input-pelicula").value = "";
+    
+    var element = document.getElementById("input-pelicula");
+    element.value = ""
+    element.focus();
+
     this.filtrar();
   }
 

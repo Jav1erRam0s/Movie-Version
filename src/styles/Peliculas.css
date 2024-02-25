@@ -4,6 +4,15 @@
 #body-peliculas {
   background-color: var(--body-peliculas-background);
   height: 100%;
+  min-height: 100vh;
 
   padding: 20px;
+}
+
+.ancla:before {
+  display: block;
+  content: " ";
+  margin-top: -56px;
+  height: 56px;
+  visibility: hidden;
 }

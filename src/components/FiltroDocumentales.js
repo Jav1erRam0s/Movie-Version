@@ -73,7 +73,11 @@ class FiltroDocumentales extends React.Component {
     this.setState({
       valorInput: "",
     });
-    document.getElementById("input-documental").value = "";
+    
+    var element = document.getElementById("input-documental");
+    element.value = ""
+    element.focus();
+
     this.filtrar();
   }
 

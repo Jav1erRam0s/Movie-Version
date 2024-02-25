@@ -205,8 +205,7 @@ class ListaPeliculas extends React.Component {
             {this.state.statusPeliculas === true &&
               this.state.peliculas.length === 0 && (
                 <div
-                  className="col-12 align-content-column"
-                  style={{ height: "100%", padding: "0" }}
+                  className="col-12 align-content-column container-notificacion"
                 >
                   <div className="notificacion-peliculas">
                     A la brevedad tendremos películas
@@ -216,8 +215,7 @@ class ListaPeliculas extends React.Component {
             {this.state.statusPeliculas === true &&
               this.state.peliculasFilter.length === 0 && (
                 <div
-                  className="col-12 align-content-column"
-                  style={{ height: "100%", padding: "0" }}
+                  className="col-12 align-content-column container-notificacion"
                 >
                   <div className="notificacion-peliculas">
                     No se encontraron resultados que coincidan con la búsqueda

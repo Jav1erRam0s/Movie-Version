@@ -8,12 +8,11 @@ class Series extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <a name="up" href="-">
-          {""}
-        </a>
-        <div id="body-miniseries">
-          <ListaMiniseries />
-        </div>
+        <section id="top" className="ancla">
+          <div id="body-miniseries">
+            <ListaMiniseries />
+          </div>
+        </section>
       </React.Fragment>
     );
   }

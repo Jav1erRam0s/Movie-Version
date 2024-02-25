@@ -8,12 +8,11 @@ class Documentales extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <a name="up" href="-">
-          {""}
-        </a>
-        <div id="body-documentales">
-          <ListaDocumentales />
-        </div>
+        <section id="top" className="ancla">
+          <div id="body-documentales">
+            <ListaDocumentales />
+          </div>
+        </section>
       </React.Fragment>
     );
   }
