@@ -186,7 +186,7 @@ class ComoDescargar extends React.Component {
               segundo. Cada archivo comprimido es de 1 GB (1024 MB) lo que da
               como resultado, aplicando regla de tres, 8.53 min de demora por
               cada uno y como los videos tiene un tamaño promedio de 3.5 GB,
-              tenemos un tiempo de demora es de 29.86 min ≈ 1/2 hora para
+              tenemos un tiempo de demora de 29.86 min ≈ 1/2 hora para
               disfrutar de una buena pelicula, documental o miniserie en
               altisima calidad.
             </div>
